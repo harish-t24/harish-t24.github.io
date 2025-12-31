@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <nav>
+    <div class="logo"  style="color: blueviolet;">My Portfolio</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul id="nav-links">
+      <li><a class="active" onclick="showSection('home')">Home</a></li>
+      <li><a onclick="showSection('about')">About me</a></li>
+      <li><a onclick="showSection('skills')">Skills</a></li>
+      <li><a onclick="showSection('education')">Education</a></li>
+      <li><a onclick="showSection('resume')">Resume</a></li>
+      <li><a onclick="showSection('contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== Sections ===== -->
+  <section id="home" class="content-section">
+    <div class="intro-section">
+      <div class="intro-text">
+        <h1  style="font-size: 28px;">Welcome to My Portfolio</h1>
+        <h1 style="color: lightcoral; font-size: 36px;">Harish T</h1>
+        <h2>A <span style="color: lightgreen; font-size: 32px;">Python Developer</span> & <span style="color: lightgreen; font-size: 32px;">Web Designer</span></h2>
+        <p>Welcome to my portfolio website. Here you’ll find my skills, education, resume, and how to contact me.</p>
+      </div>
+      <div class="intro-image">
+        <img src="profile.jpeg" alt="Profile Picture">
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="content-section">
+    <h1 style="padding: 30px;">About Me</h1>
+  <p style="padding: 50px;">
+        I am Harish T. A pre-final B.Tech Computer Science and Engineering student at Rajiv Gandhi College of Engineering and Technology specializing in Python Developer & Web Designer. Passionate about building scalable and efficient applications.
+        Eager to apply technical skills and problem-solving abilities to a challenging role in the tech industry. A quick learner and a dedicated team player, always seeking opportunities to grow and contribute to innovative projects.
+      </p>
+  </section>
+
+  <section id="skills" class="content-section">
+    <h1 style="padding: 30px;">My Skills</h1>
+  <ul style="padding: 50px;">
+    <li>Technical Skills: Python, Java, C++, HTML, CSS, MySQL</li>
+    <li>Tools & Platforms: MS Office, VS Code, Windows, Linux </li>
+    <li>Soft Skills: Problem Solving, Teamwork, Communication</li>
+    <li>Languages Known: English, Tamil </li>
+  </ul>
+  </section>
+
+  <section id="education" class="content-section">
+    <h1 style="padding: 30px;">Education Qualification</h1>
+    <ul style="padding: 50px;">
+    <h3>RAJIV GANDHI COLLEGE OF ENGINEERING & TECHNOLOGY, PUDUCHERRY </h3>
+    <p>Bachelor of Technology in Computer Science and Engineering – 2023-27 Batch </p>
+    <p>CGPA – 8.94/10 </p>
+<br>
+    <h3>ACHARIYA SIKSHA MANDIR HR. SEC. SCHOOL, PUDUCHERRY </h3>
+    12th Standard (HSC) 
+    Year of Passing: 2023 | Percentage – 81%
+  </ul>
+  </section>
+
+<section id="resume" class="content-section">
+    <h1 style="padding: 30px;">Resume</h1>
+  <center><img class='resume-my'src="Resume-1.png" alt="Resume"></center>
+  <a href="Resume3.pdf" download class="btn">Download Resume PDF</a>
+  </section>  
+
+  <section id="contact" class="content-section">
+    <h1 style="padding: 30px;">Contact Me</h1>
+    <p style="padding: 50px;">Email: harish.t7708@gmail.com<br>
+    </p>
+     <section>
+      <div class="social-container">
+        <a href="https://www.linkedin.com/in/harish-t7708" target="_blank" class="social-box linkedin">
+          <img src="linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/harish-t24" target="_blank" class="social-box github">
+          <img src="github.png" alt="GitHub">
+        </a>
+        <a href="https://wa.me/917708911399" target="_blank" class="social-box whatsapp">
+          <img src="whatsapp.png" alt="WhatsApp">
+        </a>
+        <a href="https://www.instagram.com/harish.t_24" target="_blank" class="social-box instagram">
+          <img src="instagram.png" alt="Instagram">
+        </a>
+      </div>
+    </section>
+  </section>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    // Toggle mobile menu
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      menuToggle.classList.toggle("open");
+      navLinks.classList.toggle("active");
+    });
+
+    // Show only clicked section
+    function showSection(sectionId) {
+      document.querySelectorAll(".content-section").forEach(sec => {
+        sec.style.display = "none";
+      });
+
+      document.getElementById(sectionId).style.display = "block";
+
+      // Highlight active menu item
+      document.querySelectorAll("nav ul li a").forEach(link => {
+        link.classList.remove("active");
+      });
+      event.target.classList.add("active");
+
+      // Close menu after click (for mobile)
+      navLinks.classList.remove("active");
+      menuToggle.classList.remove("open");
+    }
+  </script>
+<!-- FOOTER -->
+    <footer style="color: blue; text-align: center;">
+      <p>&copy; 2025 Harish T. All rights reserved.</p>
+    </footer>
+</body>
+</html>
